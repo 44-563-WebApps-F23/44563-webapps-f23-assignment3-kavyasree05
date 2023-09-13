@@ -11,7 +11,7 @@
     Mist-kissed mornings and <b>serene valleys</b> evoke a tranquil ambiance. Cascading waterfalls and 
     spice-scented air complete this idyllic retreat, making <b>Munnar a cherished haven for nature lovers.</b>
     <hr>
-    <h3>Three Activities to do at Munnar: </h3>
+    <h4>Three Activities to do at Munnar: </h4>
     <ol>
         <li>Explore Tea Gardens and Plantations
             <ol>
@@ -41,7 +41,7 @@
         </style>
         <body>
         
-        <h5>A basic HTML Sports Table</h5>
+        <h3>A basic HTML Sports Table</h3>
         
         <p>Engaging in sports offers numerous benefits, including improved physical fitness, enhanced mental well-being, and the development of essential life skills like teamwork and discipline. Regular participation in sports can also promote a healthier lifestyle and help reduce the risk of chronic illnesses.</p>
         
@@ -71,6 +71,52 @@
             <td>4 - 6 Hours</td>
           </tr>
         </table>
-        
+
+        <hr>
+
+        <h3>Stackflow Link</h3>
+        <a href="https://stackoverflow.com/questions/40403309/how-to-adjust-header-and-admin-bar-on-wordpress">stackoverflow link</a>
+
+        <h3>Snippet htaccess Link</h3>
+        <a href="https://css-tricks.com/snippets/wordpress/shrink-the-admin-bar-expand-on-hover/">code snippet link</a>
+
+        <pre>
+            add_action('get_header', 'my_filter_head');
+            function my_filter_head() { remove_action('wp_head', '_admin_bar_bump_cb'); }
+             
+            function my_admin_css() {
+                    if ( is_user_logged_in() ) {
+                    ?>
+                    <style type="text/css">
+                        #wpadminbar {
+                            width: 47px;
+                            min-width: auto;
+                            overflow: hidden;
+                            -webkit-transition: .4s width;
+                            -webkit-transition-delay: 1s;
+                            -moz-transition: .4s width;
+                            -moz-transition-delay: 1s;
+                            -o-transition: .4s width;
+                            -o-transition-delay: 1s;
+                            -ms-transition: .4s width;
+                            -ms-transition-delay: 1s;
+                            transition: .4s width;
+                            transition-delay: 1s;
+                        }
+                        
+                        #wpadminbar:hover {
+                            width: 100%;
+                            overflow: visible;
+                            -webkit-transition-delay: 0;
+                            -moz-transition-delay: 0;
+                            -o-transition-delay: 0;
+                            -ms-transition-delay: 0;
+                            transition-delay: 0;
+                        }
+                    </style>
+                    <?php }
+            }
+            add_action('wp_head', 'my_admin_css');
+        </pre>
 </body>
 </html>
