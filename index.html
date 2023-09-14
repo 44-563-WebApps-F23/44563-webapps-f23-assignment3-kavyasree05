@@ -81,6 +81,7 @@
         <h4>Snippet htaccess Link</h4>
         <a href="https://css-tricks.com/snippets/wordpress/shrink-the-admin-bar-expand-on-hover/">code snippet link</a>
 
+        <div style="width: auto; height:auto; border: 1px solid black;">
         <pre>
 
             add_action('get_header', 'my_filter_head');
@@ -89,11 +90,26 @@
             function my_admin_css() {
                     if ( is_user_logged_in() ) {
                     ?>
-                    &lt;style type=&quot;text/css&quot;&gt; #wpadminbar { width: 47px; min-width: auto; overflow: hidden; -webkit-transition: .4s width; -webkit-transition-delay: 1s; -moz-transition: .4s width; -moz-transition-delay: 1s; -o-transition: .4s width; -o-transition-delay: 1s; -ms-transition: .4s width; -ms-transition-delay: 1s; transition: .4s width; transition-delay: 1s; } #wpadminbar:hover { width: 100%; overflow: visible; -webkit-transition-delay: 0; -moz-transition-delay: 0; -o-transition-delay: 0; -ms-transition-delay: 0; transition-delay: 0; } &lt;/style&gt; &lt;?php }
+                    &lt;style type=&quot;text/css&quot;&gt; #wpadminbar { 
+                        width: 47px; min-width: auto; overflow: hidden; 
+                        -webkit-transition: .4s width; -webkit-transition-delay: 1s; 
+                        -moz-transition: .4s width; -moz-transition-delay: 1s; 
+                        -o-transition: .4s width; -o-transition-delay: 1s; 
+                        -ms-transition: .4s width; -ms-transition-delay: 1s; 
+                        transition: .4s width; transition-delay: 1s; } 
+                        #wpadminbar:hover 
+                        { width: 100%; overflow: visible; 
+                        -webkit-transition-delay: 0; -moz-transition-delay: 0; 
+                        -o-transition-delay: 0; -ms-transition-delay: 0; transition-delay: 0; 
+                    } 
+                    &lt;/style&gt; &lt;
+                    ?php 
+                }
                     }
                 add_action('wp_head', 'my_admin_css');
 
                 ?>
         </pre>
+        </div>
 </body>
 </html>
